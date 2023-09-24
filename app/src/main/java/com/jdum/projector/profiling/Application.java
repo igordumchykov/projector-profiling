@@ -1,3 +1,5 @@
+package com.jdum.projector.profiling;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Consumer;
+import org.openjdk.jol.info.GraphLayout;
 
 public class Application {
 
@@ -39,7 +42,7 @@ public class Application {
 
   private static void measure(String fileName, Consumer<List<Pair<Integer, Integer>>> consumer)
       throws IOException {
-    RESULT.append("size,insertTime,getTime,deleteTime\n");
+    RESULT.append("number of elements,insert time,size in bytes,search time,delete time\n");
     for (int i = 0; i < 10000; i += 100) {
       RESULT.append(String.format("%s,", i));
       List<Pair<Integer, Integer>> pairs = generateSequence(i);
@@ -56,6 +59,7 @@ public class Application {
   private static void measure(List<Pair<Integer, Integer>> pairs) {
     BST<Integer, Integer> tree = new BST<>();
     measure(() -> pairs.forEach(pair -> tree.put(pair.key, pair.value)), false);
+    RESULT.append(GraphLayout.parseInstance(tree).totalSize()).append(",");
     measure(() -> pairs.forEach(pair -> tree.get(pair.key)), false);
     measure(() -> pairs.forEach(pair -> tree.delete(pair.key)), true);
   }

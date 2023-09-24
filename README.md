@@ -1,11 +1,11 @@
 # projector-profiling
 
-- Implements balanced BST tree and compares complexity for insert, get, delete elements
+Implements balanced BST tree and compares:
+1. complexity for insert, get, delete elements
+2. How space size in bytes depends on number of elements
 
-# BST
-
-### [Implementation](./BST.java)
-### [Test cases](./Application.java)
+### [Implementation](app/src/main/java/com/jdum/projector/profiling/BST.java)
+### [Test cases](app/src/main/java/com/jdum/projector/profiling/Application.java)
 
 ## Results
 
@@ -14,19 +14,31 @@
 [File with results](docs/random.csv)
 
 
-![](docs/random.png)
+#### Execution time
+![](docs/time-random.png)
+
+#### Size
+![](docs/size-random.png)
 
 ### Generate 100 datasets with sorted (ASC) elements
 
 [File with results](docs/sortedAsc.csv)
 
 
-![](docs/sortedAsc.png)
+#### Execution time
+![](docs/time-sort-asc.png)
+
+#### Size
+![](docs/size-sort-asc.png)
 
 ### Generate 100 datasets with sorted (DESC) elements
 
 [File with results](docs/sortedDesc.csv)
 
 
-![](docs/sortedDesc.png)
+#### Execution time
+![](docs/time-sort-desc.png)
+
+#### Size
+![](docs/size-sort-desc.png)
 

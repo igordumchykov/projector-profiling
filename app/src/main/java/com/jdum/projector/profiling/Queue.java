@@ -1,8 +1,10 @@
+package com.jdum.projector.profiling;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * The {@code Queue} class represents a first-in-first-out (FIFO)
+ * The {@code com.jdum.projector.profiling.Queue} class represents a first-in-first-out (FIFO)
  * queue of generic items.
  * It supports the usual <em>enqueue</em> and <em>dequeue</em>
  * operations, along with methods for peeking at the first item,
@@ -68,7 +70,7 @@ public class Queue<Item> implements Iterable<Item> {
    * @throws NoSuchElementException if this queue is empty
    */
   public Item peek() {
-    if (isEmpty()) throw new NoSuchElementException("Queue underflow");
+    if (isEmpty()) throw new NoSuchElementException("com.jdum.projector.profiling.Queue underflow");
     return first.item;
   }
 
@@ -94,7 +96,7 @@ public class Queue<Item> implements Iterable<Item> {
    * @throws NoSuchElementException if this queue is empty
    */
   public Item dequeue() {
-    if (isEmpty()) throw new NoSuchElementException("Queue underflow");
+    if (isEmpty()) throw new NoSuchElementException("com.jdum.projector.profiling.Queue underflow");
     Item item = first.item;
     first = first.next;
     n--;

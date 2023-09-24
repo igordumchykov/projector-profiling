@@ -1,3 +1,5 @@
+package com.jdum.projector.profiling;
+
 class Pair<K extends Comparable<K>, V extends Comparable<V>> implements Comparable<Pair<K, V>> {
   K key;
   V value;

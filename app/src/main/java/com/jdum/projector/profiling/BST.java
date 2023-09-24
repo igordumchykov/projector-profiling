@@ -1,7 +1,9 @@
+package com.jdum.projector.profiling;
+
 import java.util.NoSuchElementException;
 
 /**
- * The {@code BST} class represents an ordered symbol table of generic
+ * The {@code com.jdum.projector.profiling.BST} class represents an ordered symbol table of generic
  * key-value pairs.
  * It supports the usual <em>put</em>, <em>get</em>, <em>contains</em>,
  * <em>delete</em>, <em>size</em>, and <em>is-empty</em> methods.
@@ -34,7 +36,7 @@ import java.util.NoSuchElementException;
  * @author Kevin Wayne
  */
 public class BST<Key extends Comparable<Key>, Value> {
-  private Node root;             // root of BST
+  private Node root;             // root of com.jdum.projector.profiling.BST
 
   private class Node {
     private Key key;           // sorted by key
@@ -73,7 +75,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     return size(root);
   }
 
-  // return number of key-value pairs in BST rooted at x
+  // return number of key-value pairs in com.jdum.projector.profiling.BST rooted at x
   private int size(Node x) {
     if (x == null) {
       return 0;
@@ -540,9 +542,9 @@ public class BST<Key extends Comparable<Key>, Value> {
   }
 
   /**
-   * Returns the height of the BST (for debugging).
+   * Returns the height of the com.jdum.projector.profiling.BST (for debugging).
    *
-   * @return the height of the BST (a 1-node tree has height 0)
+   * @return the height of the com.jdum.projector.profiling.BST (a 1-node tree has height 0)
    */
   public int height() {
     return height(root);
@@ -556,9 +558,9 @@ public class BST<Key extends Comparable<Key>, Value> {
   }
 
   /**
-   * Returns the keys in the BST in level order (for debugging).
+   * Returns the keys in the com.jdum.projector.profiling.BST in level order (for debugging).
    *
-   * @return the keys in the BST in level order traversal
+   * @return the keys in the com.jdum.projector.profiling.BST in level order traversal
    */
   public Iterable<Key> levelOrder() {
     Queue<Key> keys = new Queue<Key>();
@@ -577,7 +579,7 @@ public class BST<Key extends Comparable<Key>, Value> {
   }
 
   /*************************************************************************
-   *  Check integrity of BST data structure.
+   *  Check integrity of com.jdum.projector.profiling.BST data structure.
    ***************************************************************************/
   private boolean check() {
     if (!isBST()) {
@@ -598,7 +600,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     return isBST(root, null, null);
   }
 
-  // is the tree rooted at x a BST with all keys strictly between min and max
+  // is the tree rooted at x a com.jdum.projector.profiling.BST with all keys strictly between min and max
   // (if min or max is null, treat as empty constraint)
   // Credit: Bob Dondero's elegant solution
   private boolean isBST(Node x, Key min, Key max) {
